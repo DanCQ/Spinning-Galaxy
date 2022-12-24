@@ -115,7 +115,7 @@ function animate() {
     radians += 0.0003;
 
     if(slow) {
-        alpha -= 0.05;
+        alpha -= 0.01;
         radians += 0.005;
     } else {
         alpha = 0.8;
@@ -124,12 +124,9 @@ function animate() {
 }
 
 
-canvas.addEventListener("mousedown", function() {
-    slow = true;
-});
+canvas.addEventListener("click", function() {
 
-canvas.addEventListener("mouseup", function() {
-    slow = false;
+    slow == false ? slow = true : slow = false;
 });
 
 
