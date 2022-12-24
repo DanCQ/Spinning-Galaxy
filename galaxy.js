@@ -113,12 +113,14 @@ function animate() {
     radians += 0.0003;
 
     if(slow) {
-        alpha -= 0.0025;
+        if(alpha > 0.001) {
+            alpha -= 0.0025;
+        }  
         radians += 0.005;
+        
     } else {
         alpha = 0.8;
     }
-
 }
 
 
@@ -149,9 +151,11 @@ canvas.addEventListener("click", function() {
 
 //prevents infite loop when loading page on mobile
 setTimeout(function() {
+
     window.addEventListener("resize", function() {
         location.reload();
     });
+
 }, 25); 
 
 
