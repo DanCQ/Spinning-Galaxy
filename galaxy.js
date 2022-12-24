@@ -58,8 +58,6 @@ class Starry {
         this.radius = radius
     }
 
-
-
     //circle
     draw() {
         c.beginPath();
@@ -84,7 +82,7 @@ function creator() {
     
     for(let i = 0; i < 600; i++) {
 
-        x = randomRange(-screenWidth, screenWidth);
+        x = randomRange(-screenWidth, screenWidth); //makes up for offset of screen in animation
         y = randomRange(-screenHeight, screenHeight);
         color = colorArray[randomRange(0, colorArray.length - 1)];
         radius = randomRange(0.6, 1);
@@ -104,7 +102,7 @@ function animate() {
     c.fillRect(0,0,screenWidth,screenHeight);
 
     c.save();
-    c.translate(screenWidth / 2, screenHeight / 2);
+    c.translate(screenWidth / 2, screenHeight / 2); //repositions screen
     c.rotate(radians);
 
     array.forEach(obj => {
@@ -115,7 +113,7 @@ function animate() {
     radians += 0.0003;
 
     if(slow) {
-        alpha -= 0.01;
+        alpha -= 0.0025;
         radians += 0.005;
     } else {
         alpha = 0.8;
@@ -125,12 +123,8 @@ function animate() {
 
 
 canvas.addEventListener("click", function() {
-
+    
     slow == false ? slow = true : slow = false;
-});
-
-
-canvas.addEventListener("click", function() {
 
     portfolio.style.visibility = "visible";
 
