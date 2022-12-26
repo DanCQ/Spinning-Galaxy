@@ -70,7 +70,7 @@ class Starry {
     }
 
     update() {
-
+        
         this.draw();
     }
 }
@@ -110,7 +110,7 @@ function animate() {
     });
     c.restore();
 
-    radians += 0.0003;
+    radians += 0.00025;
 
     if(slow) {
         if(alpha > 0.001) {
