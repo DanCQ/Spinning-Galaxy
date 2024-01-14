@@ -149,12 +149,6 @@ canvas.addEventListener("click", function() {
 });
 
 
-// Prevents the right-click menu
-document.addEventListener('contextmenu', function (event) {
-    event.preventDefault(); 
-});
-
-
 //prevents infite loop when loading page on mobile
 setTimeout(function() {
 
